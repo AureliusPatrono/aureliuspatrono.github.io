@@ -1,0 +1,51 @@
+body{
+    background-image: url(p.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    
+    font-family: 'Times New Roman', Times, serif;
+    color: #452014;
+}
+
+.box {
+    background-color: #F2E1C8;
+    border-radius: 55px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border-color: #E1A53E;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color:whitesmoke;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color:whitesmoke;
+}
+
+li {
+    font-family: 'Times New Roman', Times, serif;
+    color:whitesmoke;
+}
+
+.section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+
+#aa {
+    scroll-behavior: smooth;
+}
