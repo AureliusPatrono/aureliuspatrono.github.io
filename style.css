@@ -6,7 +6,7 @@
 }
 
 #normalbody{
-            background-image: url(img/background.jpg);
+        background-image: url(img/background.jpg);
 }
 
 p{
@@ -27,7 +27,7 @@ p{
 }
 
 .box:hover {
-    transform: scale(1);
+    transform: scale(1.2);
     background-color: #e0c69f;
 }
 
