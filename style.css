@@ -27,7 +27,7 @@ p{
 }
 
 .box:hover {
-    transform: scale(0.8);
+    transform: scale(1);
     background-color: #e0c69f;
 }
 
