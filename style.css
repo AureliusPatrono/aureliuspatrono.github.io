@@ -5,8 +5,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#normalbody{
-        background-image: url(img/background.jpg);
+#normalbody {
+    background-image: url(img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 p{
@@ -27,7 +30,7 @@ p{
 }
 
 .box:hover {
-    transform: scale(1.2);
+    transform: scale(1.02);
     background-color: #e0c69f;
 }
 
