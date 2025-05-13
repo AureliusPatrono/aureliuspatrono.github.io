@@ -5,11 +5,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body id="normalbody" style="background-image: url(img/backkground.jpg);">
-        <div style = "display:flex;
-            align-items:center;
-            gap:1rem;
-            max-width: 600px;
-            padding: 1rem;">
+        <div style = "display:flex; align-items:center; gap:1rem; max-width: 600px; padding: 1rem;">
         <a href = index.html>
             <img style="width: 1em; height: 1em; padding-top: 1em; padding-left: 1em;" src="img/back.png">
         </a>
@@ -21,28 +17,31 @@
             
         </div>
         <br><br>
+
         <center>
-         <form id="searchForm" class="search-container" role="search" aria-label="Formulário de busca">
-      <input 
-        type="search" 
-        id="searchInput" 
-        name="query" 
-        placeholder="Pesquisar..." 
-        aria-label="Pesquisar arquivo para download"
-        autocomplete="off"
-        required
-      />
-      <button type="submit" class="search-btn" aria-label="Buscar arquivo">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.07 5.72 12.35 3 8.99 3 5.6 3 3 5.6 3 8.99 3 12.35 5.72 15.07 9.39 15.5a6.471 6.471 0 005.34-1.48l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6.5 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-        </svg>
-      </button>
-    </form>
+        <form id="searchForm" class="search-container" role="search" aria-label="Formulário de busca">
+            <input 
+                type="search" 
+                id="searchInput" 
+                name="query" 
+                placeholder="Pesquisar..." 
+                aria-label="Pesquisar arquivo para download"
+                autocomplete="off"
+                required
+            />
+            <button type="submit" class="search-btn" aria-label="Buscar arquivo">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.07 5.72 12.35 3 8.99 3 5.6 3 3 5.6 3 8.99 3 12.35 5.72 15.07 9.39 15.5a6.471 6.471 0 005.34-1.48l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6.5 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+            </button>
+        </form>
         </center>
+
+
         <!--inicio lista de filmes-->
 <div id="results">
         <table style="width: 100%; padding-top: 2em;">
-            <tr>
+            <tr class="option">
             <td style="text-align: left;">
                 <center>
                 <div class="list-box">
@@ -60,7 +59,7 @@
             </td>
             </tr>
 
-            <tr>
+            <tr class="option">
             <td style="text-align: left;">
                 <center>
                 <div class="list-box">
@@ -78,7 +77,7 @@
             </td>
             </tr>
 
-            <tr>
+            <tr class="option">
             <td style="text-align: left;">
                 <center>
                 <div class="list-box">
@@ -96,7 +95,7 @@
             </td>
             </tr>
 
-            <tr>
+            <tr class="option">
             <td style="text-align: left;">
                 <center>
                 <div class="list-box">
@@ -114,7 +113,7 @@
                 </td>
             </tr>
             
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -132,7 +131,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -150,7 +149,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -168,7 +167,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -186,7 +185,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -204,7 +203,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -222,7 +221,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -240,7 +239,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -258,7 +257,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -276,7 +275,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -294,7 +293,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -312,7 +311,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -330,7 +329,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -348,7 +347,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -366,7 +365,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -384,7 +383,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -402,7 +401,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -420,7 +419,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -438,7 +437,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -456,7 +455,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -474,7 +473,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -492,7 +491,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -510,7 +509,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -528,7 +527,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -546,7 +545,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -564,7 +563,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -582,7 +581,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -600,7 +599,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -618,7 +617,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -636,7 +635,7 @@
                 </td>
             </tr>
 
-            <tr>
+            <tr class="option">
                 <td style="text-align: left;">
                     <center>
                         <div class="list-box">
@@ -657,7 +656,7 @@
         </table>
 <script>
     const searchInput = document.getElementById('searchInput');
-    const movieRows = document.querySelectorAll('.list-box');
+    const movieRows = document.querySelectorAll('.option');
     function searchMovies() {
         const filter = searchInput.value.toLowerCase();
         movieRows.forEach(row => {
