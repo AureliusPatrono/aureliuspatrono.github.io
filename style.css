@@ -91,7 +91,7 @@ li {
   }
 .search-container {
     position: relative;
-    width: 100%;
+    width: 40%;
   }
   input[type="search"] {
     width: 100%;
