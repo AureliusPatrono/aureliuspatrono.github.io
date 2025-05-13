@@ -106,3 +106,9 @@ li {
     border-color: #4a90e2;
     box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
   }
+.results {
+  position: sticky;
+  top: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
