@@ -5,18 +5,21 @@
     <title>Biblioteca de Livros</title>
     <style>
         body {
-            background-image: url(img/backkground.jpg);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f3f3f3;
+            background-image: url("img/backkground.jpg");
+            background-size: cover;
+            background-attachment: fixed;
             margin: 0;
             padding: 20px;
+            color: #333;
         }
         
         h1 {
             text-align: center;
-            color: #444;
+            color: #fff;
             margin-bottom: 30px;
             font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .books-container {
@@ -28,11 +31,11 @@
         }
         
         .book-card {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
         }
@@ -201,224 +204,224 @@
             {
                 title: "Cem Anos de Solidão",
                 file: "books/cem_anos.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780060883287-S.jpg",
                 description: "Obra-prima de Gabriel García Márquez que narra a história da família Buendía ao longo de várias gerações em Macondo, uma cidade fictícia na Colômbia.",
                 highlight: 1
             },
             {
                 title: "Flores para Algernon",
                 file: "books/flores.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780156030083-S.jpg",
                 description: "Romance de ficção científica que conta a história de Charlie Gordon, um homem com deficiência intelectual que passa por uma cirurgia experimental para aumentar sua inteligência.",
                 highlight: 0
             },
             {
                 title: "O Fantasma da Ópera",
                 file: "books/fantasma.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780141191508-S.jpg",
                 description: "Clássico romance gótico de Gaston Leroux sobre um misterioso fantasma que assombra a Ópera de Paris e se apaixona por uma soprano.",
                 highlight: 1
             },
             {
                 title: "Duna",
                 file: "books/duna.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780441172719-S.jpg",
                 description: "Épico de ficção científica de Frank Herbert que se passa em um futuro distante em um planeta desértico chamado Arrakis, único lugar onde se encontra a especiaria mais valiosa do universo.",
                 highlight: 1
             },
             {
                 title: "Torto Arado",
                 file: "books/torto_arado.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9788556521132-S.jpg",
                 description: "Romance de Itamar Vieira Junior que acompanha duas irmãs em uma fazenda no sertão da Bahia, abordando temas como identidade e luta pela terra.",
                 highlight: 0
             },
             {
                 title: "A Metamorfose",
                 file: "books/metamorfose.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780553213690-S.jpg",
                 description: "Obra de Franz Kafka que narra a história de Gregor Samsa, um caixeiro-viajante que acorda certa manhã transformado em um inseto monstruoso.",
                 highlight: 0
             },
             {
                 title: "Harry Potter e a Pedra Filosofal",
                 file: "books/hp1.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780590353427-S.jpg",
                 description: "Primeiro livro da série Harry Potter, que apresenta o jovem bruxo e seu ingresso na Escola de Magia e Bruxaria de Hogwarts.",
                 highlight: 0
             },
             {
                 title: "Harry Potter e a Câmara Secreta",
                 file: "books/hp2.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780439064873-S.jpg",
                 description: "Segundo livro da série Harry Potter, onde uma antiga câmara é aberta na escola, liberando um monstro que ameaça os alunos.",
                 highlight: 0
             },
             {
                 title: "Harry Potter e o Prisioneiro de Azkaban",
                 file: "books/hp3.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780439136358-S.jpg",
                 description: "Terceiro livro da série Harry Potter, onde o bruxo fugitivo Sirius Black parece estar perseguindo Harry.",
                 highlight: 0
             },
             {
                 title: "Harry Potter e o Cálice de Fogo",
                 file: "books/hp4.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780439139595-S.jpg",
                 description: "Quarto livro da série Harry Potter, no qual Harry participa do perigoso Torneio Tribruxo.",
                 highlight: 0
             },
             {
                 title: "Harry Potter e a Ordem da Fênix",
                 file: "books/hp5.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780439358071-S.jpg",
                 description: "Quinto livro da série Harry Potter, onde Harry enfrenta o Ministério da Magia que nega o retorno de Voldemort.",
                 highlight: 0
             },
             {
                 title: "Harry Potter e o Enigma do Príncipe",
                 file: "books/hp6.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780439785969-S.jpg",
                 description: "Sexto livro da série Harry Potter, onde Harry descobre mais sobre o passado de Voldemort através das memórias coletadas por Dumbledore.",
                 highlight: 1
             },
             {
                 title: "Harry Potter e as Relíquias da Morte",
                 file: "books/hp7.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780545139700-S.jpg",
                 description: "Sétimo e último livro da série Harry Potter, onde Harry precisa encontrar e destruir as Horcruxes para derrotar Voldemort.",
                 highlight: 0
             },
             {
                 title: "1984",
                 file: "books/1984.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780451524935-S.jpg",
                 description: "Clássico distópico de George Orwell que retrata um regime totalitário onde o Estado controla todos os aspectos da vida dos cidadãos.",
                 highlight: 0
             },
             {
                 title: "Admirável Mundo Novo",
                 file: "books/admiravel-mundo-novo.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780060850524-S.jpg",
                 description: "Romance distópico de Aldous Huxley que descreve uma sociedade futura onde as pessoas são condicionadas a amar sua servidão.",
                 highlight: 1
             },
             {
                 title: "Água Viva",
                 file: "books/agua-viva.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780811219907-S.jpg",
                 description: "Obra experimental de Clarice Lispector que rompe com as estruturas narrativas tradicionais, explorando sensações e pensamentos.",
                 highlight: 0
             },
             {
                 title: "A Revolução dos Bichos",
                 file: "books/animal-farm.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780451526342-S.jpg",
                 description: "Fábula política de George Orwell que retrata uma revolução de animais que tomam uma fazenda e estabelecem seus próprios princípios.",
                 highlight: 1
             },
             {
                 title: "Cleópatra e Frankestein",
                 file: "books/cleopatra-e-frankestein.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9781526638830-S.jpg",
                 description: "Romance contemporâneo de Coco Mellors sobre um casal improvável cujo relacionamento intenso revela complexidades humanas profundas.",
                 highlight: 2
             },
             {
                 title: "Correio Feminino",
                 file: "books/correio-feminino.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9788532520746-S.jpg",
                 description: "Coletânea de crônicas e textos que Clarice Lispector escreveu para colunas femininas sob pseudônimos.",
                 highlight: 0
             },
             {
                 title: "Cosmos",
                 file: "books/cosmos.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780345539434-S.jpg",
                 description: "Obra de divulgação científica de Carl Sagan que explora a história da astronomia e as maravilhas do universo.",
                 highlight: 1
             },
             {
                 title: "A Guerra dos Mundos",
                 file: "books/guerra-dos-mundos.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780141441030-S.jpg",
                 description: "Romance de ficção científica de H.G. Wells que narra uma invasão alienígena vinda de Marte à Terra.",
                 highlight: 1
             },
             {
                 title: "A Hora da Estrela",
                 file: "books/hora-da-estrela.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780811219495-S.jpg",
                 description: "Romance de Clarice Lispector que conta a história de Macabéa, uma nordestina simples que migra para o Rio de Janeiro.",
                 highlight: 0
             },
             {
                 title: "Invisível",
                 file: "books/invisivel.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780312429829-S.jpg",
                 description: "Romance de Paul Auster que explora temas de identidade e percepção através de múltiplas perspectivas narrativas.",
                 highlight: 2
             },
             {
                 title: "It",
                 file: "books/it.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9781501142970-S.jpg",
                 description: "Terror de Stephen King sobre um grupo de amigos que enfrenta uma entidade maligna que assume várias formas, principalmente a de um palhaço.",
                 highlight: 2
             },
             {
                 title: "Laços de Família",
                 file: "books/lacos-de-familia.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9788520923184-S.jpg",
                 description: "Coletânea de contos de Clarice Lispector que explora a vida cotidiana e os dramas íntimos de suas personagens.",
                 highlight: 2
             },
             {
                 title: "Memórias Póstumas de Brás Cubas",
                 file: "books/bras-cubas.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780195101706-S.jpg",
                 description: "Romance inovador de Machado de Assis narrado por um defunto autor que conta sua vida e reflexões após a morte.",
                 highlight: 2
             },
             {
                 title: "O Labirinto do Fauno",
                 file: "books/labirinto-do-fauno.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780062414465-S.jpg",
                 description: "Baseado no filme de Guillermo del Toro, conta a história de uma menina que descobre um mundo mágico e sombrio durante a Guerra Civil Espanhola.",
                 highlight: 1
             },
             {
                 title: "O Morro dos Ventos Uivantes",
                 file: "books/wuthering-heights.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780141439556-M.jpg",
                 description: "Romance de Emily Brontë que narra a paixão tempestuosa entre Catherine Earnshaw e Heathcliff, ambientado nas charnecas inglesas.",
                 highlight: 0
             },
             {
                 title: "O Príncipe Cruel",
                 file: "books/principe-cruel.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9780316310277-S.jpg",
                 description: "Primeiro livro da série O Povo do Ar, de Holly Black, que narra a história de Jude, uma mortal que vive no mundo das fadas.",
                 highlight: 0
             },
             {
                 title: "Pessoas Normais",
                 file: "books/pessoas-normais.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9781984822178-S.jpg",
                 description: "Romance de Sally Rooney sobre o relacionamento complexo entre Connell e Marianne, da escola até a universidade.",
                 highlight: 1
             },
             {
                 title: "Quarto de Despejo",
                 file: "books/quarto-de-despejo.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9788530406066-S.jpg",
                 description: "Diário da escritora Carolina Maria de Jesus sobre sua vida na favela do Canindé, em São Paulo, nos anos 1950.",
                 highlight: 0
             },
             {
                 title: "Todas as Cartas",
                 file: "books/todas-as-cartas-clarice.pdf",
-                cover: "/api/placeholder/200/300",
+                cover: "https://covers.openlibrary.org/b/isbn/9788532512321-S.jpg",
                 description: "Coletânea de correspondências de Clarice Lispector que revela facetas pessoais e profissionais da escritora.",
                 highlight: 1
             }
@@ -437,7 +440,7 @@
                 
                 bookCard.innerHTML = `
                     <div class="book-cover">
-                        <img src="${book.cover}" alt="${book.title}">
+                        <img src="${book.cover}" alt="${book.title}" onerror="this.src='/api/placeholder/200/300';">
                     </div>
                     <div class="book-info">
                         <div class="book-title">${book.title}</div>
