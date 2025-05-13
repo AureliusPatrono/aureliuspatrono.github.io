@@ -18,6 +18,24 @@
 
         <div class="center">
             <h1 style="font-size:3em;">F I L M E S</h1>
+            <script>
+    const searchInput = document.getElementById('searchInput');
+    const movieRows = document.querySelectorAll('.movie-row');
+    // Função para buscar filmes ao clicar no botão
+    function searchMovies() {
+        const filter = searchInput.value.toLowerCase();
+        movieRows.forEach(row => {
+            const title = row.querySelector('h1').textContent.toLowerCase();
+            if (title.includes(filter)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+    // Busca em tempo real ao digitar
+    searchInput.addEventListener('input', searchMovies);
+</script>
         </div>
         
         <!--inicio lista de filmes-->
