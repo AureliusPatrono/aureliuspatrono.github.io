@@ -1,472 +1,605 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Biblioteca de Livros</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url("img/backkground.jpg");
-            background-size: cover;
-            background-attachment: fixed;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        
-        h1 {
-            text-align: center;
-            color: #fff;
-            margin-bottom: 30px;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .books-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .book-card {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .book-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .book-cover {
-            height: 250px;
-            background-color: #e9e9e9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .book-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .book-info {
-            padding: 15px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .book-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .book-description {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-        
-        .book-actions {
-            margin-top: 15px;
-            text-align: right;
-        }
-        
-        .download-btn {
-            background-color: #4a6fa5;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: background-color 0.2s;
-        }
-        
-        .download-btn:hover {
-            background-color: #3a5a8c;
-        }
-        
-        .highlight {
-            position: relative;
-        }
-        
-        .highlight::before {
-            content: "";
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 20px;
-            height: 20px;
-            background-color: gold;
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .strong-highlight {
-            position: relative;
-        }
-        
-        .strong-highlight::before {
-            content: "";
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 20px;
-            height: 20px;
-            background-color: #ff4500;
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .search-container {
+<!Doctype html>
+<html>
+    <head>
+        <title>Books</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body id="normalbody" style="background-image: url(img/backkground.jpg);">
+        <div style = "display:flex;
+            align-items:center;
+            gap:1rem;
             max-width: 600px;
-            margin: 0 auto 30px;
-        }
-        
-        #searchInput {
-            width: 100%;
-            padding: 10px 15px;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-        .legend {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            gap: 20px;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-        
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 5px;
-        }
-        
-        .gold-dot {
-            background-color: gold;
-        }
-        
-        .orange-dot {
-            background-color: #ff4500;
-        }
-    </style>
-</head>
-<body>
-    <h1>Biblioteca de Livros</h1>
-    
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Pesquisar livros...">
-    </div>
-    
-    <div class="legend">
-        <div class="legend-item">
-            <div class="legend-dot gold-dot"></div>
-            <span>Recomendado</span>
+            padding: 1rem;">
+        <a href = index.html>
+            <img style="width: 1em; height: 1em; padding-top: 1em; padding-left: 1em;" src="img/back.png">
+        </a>
+        <h3 style = "color:aliceblue;">Voltar para home</h3>
         </div>
-        <div class="legend-item">
-            <div class="legend-dot orange-dot"></div>
-            <span>Altamente Recomendado</span>
+
+        <div class="center">
+            <h1 style="font-size:3em;">L I V R O S</h1>
         </div>
-    </div>
-    
-    <div class="books-container" id="booksContainer">
-        <!-- Livros serão inseridos aqui via JavaScript -->
-    </div>
+        
+        <!--inicio lista de filmes-->
 
-    <script>
-        // Dados dos livros
-        const books = [
-            {
-                title: "Cem Anos de Solidão",
-                file: "books/cem_anos.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780060883287-S.jpg",
-                description: "Obra-prima de Gabriel García Márquez que narra a história da família Buendía ao longo de várias gerações em Macondo, uma cidade fictícia na Colômbia.",
-                highlight: 1
-            },
-            {
-                title: "Flores para Algernon",
-                file: "books/flores.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780156030083-S.jpg",
-                description: "Romance de ficção científica que conta a história de Charlie Gordon, um homem com deficiência intelectual que passa por uma cirurgia experimental para aumentar sua inteligência.",
-                highlight: 0
-            },
-            {
-                title: "O Fantasma da Ópera",
-                file: "books/fantasma.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780141191508-S.jpg",
-                description: "Clássico romance gótico de Gaston Leroux sobre um misterioso fantasma que assombra a Ópera de Paris e se apaixona por uma soprano.",
-                highlight: 1
-            },
-            {
-                title: "Duna",
-                file: "books/duna.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780441172719-S.jpg",
-                description: "Épico de ficção científica de Frank Herbert que se passa em um futuro distante em um planeta desértico chamado Arrakis, único lugar onde se encontra a especiaria mais valiosa do universo.",
-                highlight: 1
-            },
-            {
-                title: "Torto Arado",
-                file: "books/torto_arado.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9788556521132-S.jpg",
-                description: "Romance de Itamar Vieira Junior que acompanha duas irmãs em uma fazenda no sertão da Bahia, abordando temas como identidade e luta pela terra.",
-                highlight: 0
-            },
-            {
-                title: "A Metamorfose",
-                file: "books/metamorfose.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780553213690-S.jpg",
-                description: "Obra de Franz Kafka que narra a história de Gregor Samsa, um caixeiro-viajante que acorda certa manhã transformado em um inseto monstruoso.",
-                highlight: 0
-            },
-            {
-                title: "Harry Potter e a Pedra Filosofal",
-                file: "books/hp1.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780590353427-S.jpg",
-                description: "Primeiro livro da série Harry Potter, que apresenta o jovem bruxo e seu ingresso na Escola de Magia e Bruxaria de Hogwarts.",
-                highlight: 0
-            },
-            {
-                title: "Harry Potter e a Câmara Secreta",
-                file: "books/hp2.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780439064873-S.jpg",
-                description: "Segundo livro da série Harry Potter, onde uma antiga câmara é aberta na escola, liberando um monstro que ameaça os alunos.",
-                highlight: 0
-            },
-            {
-                title: "Harry Potter e o Prisioneiro de Azkaban",
-                file: "books/hp3.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780439136358-S.jpg",
-                description: "Terceiro livro da série Harry Potter, onde o bruxo fugitivo Sirius Black parece estar perseguindo Harry.",
-                highlight: 0
-            },
-            {
-                title: "Harry Potter e o Cálice de Fogo",
-                file: "books/hp4.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780439139595-S.jpg",
-                description: "Quarto livro da série Harry Potter, no qual Harry participa do perigoso Torneio Tribruxo.",
-                highlight: 0
-            },
-            {
-                title: "Harry Potter e a Ordem da Fênix",
-                file: "books/hp5.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780439358071-S.jpg",
-                description: "Quinto livro da série Harry Potter, onde Harry enfrenta o Ministério da Magia que nega o retorno de Voldemort.",
-                highlight: 0
-            },
-            {
-                title: "Harry Potter e o Enigma do Príncipe",
-                file: "books/hp6.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780439785969-S.jpg",
-                description: "Sexto livro da série Harry Potter, onde Harry descobre mais sobre o passado de Voldemort através das memórias coletadas por Dumbledore.",
-                highlight: 1
-            },
-            {
-                title: "Harry Potter e as Relíquias da Morte",
-                file: "books/hp7.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780545139700-S.jpg",
-                description: "Sétimo e último livro da série Harry Potter, onde Harry precisa encontrar e destruir as Horcruxes para derrotar Voldemort.",
-                highlight: 0
-            },
-            {
-                title: "1984",
-                file: "books/1984.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780451524935-S.jpg",
-                description: "Clássico distópico de George Orwell que retrata um regime totalitário onde o Estado controla todos os aspectos da vida dos cidadãos.",
-                highlight: 0
-            },
-            {
-                title: "Admirável Mundo Novo",
-                file: "books/admiravel-mundo-novo.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780060850524-S.jpg",
-                description: "Romance distópico de Aldous Huxley que descreve uma sociedade futura onde as pessoas são condicionadas a amar sua servidão.",
-                highlight: 1
-            },
-            {
-                title: "Água Viva",
-                file: "books/agua-viva.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780811219907-S.jpg",
-                description: "Obra experimental de Clarice Lispector que rompe com as estruturas narrativas tradicionais, explorando sensações e pensamentos.",
-                highlight: 0
-            },
-            {
-                title: "A Revolução dos Bichos",
-                file: "books/animal-farm.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780451526342-S.jpg",
-                description: "Fábula política de George Orwell que retrata uma revolução de animais que tomam uma fazenda e estabelecem seus próprios princípios.",
-                highlight: 1
-            },
-            {
-                title: "Cleópatra e Frankestein",
-                file: "books/cleopatra-e-frankestein.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9781526638830-S.jpg",
-                description: "Romance contemporâneo de Coco Mellors sobre um casal improvável cujo relacionamento intenso revela complexidades humanas profundas.",
-                highlight: 2
-            },
-            {
-                title: "Correio Feminino",
-                file: "books/correio-feminino.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9788532520746-S.jpg",
-                description: "Coletânea de crônicas e textos que Clarice Lispector escreveu para colunas femininas sob pseudônimos.",
-                highlight: 0
-            },
-            {
-                title: "Cosmos",
-                file: "books/cosmos.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780345539434-S.jpg",
-                description: "Obra de divulgação científica de Carl Sagan que explora a história da astronomia e as maravilhas do universo.",
-                highlight: 1
-            },
-            {
-                title: "A Guerra dos Mundos",
-                file: "books/guerra-dos-mundos.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780141441030-S.jpg",
-                description: "Romance de ficção científica de H.G. Wells que narra uma invasão alienígena vinda de Marte à Terra.",
-                highlight: 1
-            },
-            {
-                title: "A Hora da Estrela",
-                file: "books/hora-da-estrela.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780811219495-S.jpg",
-                description: "Romance de Clarice Lispector que conta a história de Macabéa, uma nordestina simples que migra para o Rio de Janeiro.",
-                highlight: 0
-            },
-            {
-                title: "Invisível",
-                file: "books/invisivel.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780312429829-S.jpg",
-                description: "Romance de Paul Auster que explora temas de identidade e percepção através de múltiplas perspectivas narrativas.",
-                highlight: 2
-            },
-            {
-                title: "It",
-                file: "books/it.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9781501142970-S.jpg",
-                description: "Terror de Stephen King sobre um grupo de amigos que enfrenta uma entidade maligna que assume várias formas, principalmente a de um palhaço.",
-                highlight: 2
-            },
-            {
-                title: "Laços de Família",
-                file: "books/lacos-de-familia.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9788520923184-S.jpg",
-                description: "Coletânea de contos de Clarice Lispector que explora a vida cotidiana e os dramas íntimos de suas personagens.",
-                highlight: 2
-            },
-            {
-                title: "Memórias Póstumas de Brás Cubas",
-                file: "books/bras-cubas.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780195101706-S.jpg",
-                description: "Romance inovador de Machado de Assis narrado por um defunto autor que conta sua vida e reflexões após a morte.",
-                highlight: 2
-            },
-            {
-                title: "O Labirinto do Fauno",
-                file: "books/labirinto-do-fauno.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780062414465-S.jpg",
-                description: "Baseado no filme de Guillermo del Toro, conta a história de uma menina que descobre um mundo mágico e sombrio durante a Guerra Civil Espanhola.",
-                highlight: 1
-            },
-            {
-                title: "O Morro dos Ventos Uivantes",
-                file: "books/wuthering-heights.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780141439556-M.jpg",
-                description: "Romance de Emily Brontë que narra a paixão tempestuosa entre Catherine Earnshaw e Heathcliff, ambientado nas charnecas inglesas.",
-                highlight: 0
-            },
-            {
-                title: "O Príncipe Cruel",
-                file: "books/principe-cruel.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9780316310277-S.jpg",
-                description: "Primeiro livro da série O Povo do Ar, de Holly Black, que narra a história de Jude, uma mortal que vive no mundo das fadas.",
-                highlight: 0
-            },
-            {
-                title: "Pessoas Normais",
-                file: "books/pessoas-normais.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9781984822178-S.jpg",
-                description: "Romance de Sally Rooney sobre o relacionamento complexo entre Connell e Marianne, da escola até a universidade.",
-                highlight: 1
-            },
-            {
-                title: "Quarto de Despejo",
-                file: "books/quarto-de-despejo.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9788530406066-S.jpg",
-                description: "Diário da escritora Carolina Maria de Jesus sobre sua vida na favela do Canindé, em São Paulo, nos anos 1950.",
-                highlight: 0
-            },
-            {
-                title: "Todas as Cartas",
-                file: "books/todas-as-cartas-clarice.pdf",
-                cover: "https://covers.openlibrary.org/b/isbn/9788532512321-S.jpg",
-                description: "Coletânea de correspondências de Clarice Lispector que revela facetas pessoais e profissionais da escritora.",
-                highlight: 1
-            }
-        ];
-
-        // Função para renderizar os livros
-        function renderBooks(booksArray) {
-            const container = document.getElementById('booksContainer');
-            container.innerHTML = '';
-            
-            booksArray.forEach(book => {
-                const bookCard = document.createElement('div');
-                bookCard.className = book.highlight === 1 ? 'book-card highlight' : 
-                                    book.highlight === 2 ? 'book-card strong-highlight' : 
-                                    'book-card';
-                
-                bookCard.innerHTML = `
-                    <div class="book-cover">
-                        <img src="${book.cover}" alt="${book.title}" onerror="this.src='/api/placeholder/200/300';">
+        <table style="width: 100%; padding-top: 2em;">
+            <tr>
+            <td style="text-align: left;">
+                <center>
+                <div class="list-box">
+                <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                    <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                    <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                        <h1 style="color:black;">Cem Anos de Solidão</h1><br>
+                        <p>Ipsum Lorem dkhsvkidsndnvna</p>
                     </div>
-                    <div class="book-info">
-                        <div class="book-title">${book.title}</div>
-                        <div class="book-description">${book.description}</div>
-                        <div class="book-actions">
-                            <a href="${book.file}" class="download-btn" download>Download</a>
+                    <button><a href="books/cem_anos.pdf" style="color: #ffffff; text-decoration: none:"><h2>Assistir</h2></a></button>
+                    </div>
+                </div>
+                </center>
+                <br><br>
+            </td>
+            </tr>
+
+            <tr>
+            <td style="text-align: left;">
+                <center>
+                <div class="list-box">
+                <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                    <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                    <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                        <h1 style="color:black;">Flores para Algernon</h1><br>
+                        <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                    </div>
+                    <button><a href="books/flores.pdf" style="color: #ffffff; text-decoration: none:"><h2>Assistir</h2></a></button>
+                    </div>
+                </div>
+                </center>
+                <br><br>
+            </td>
+            </tr>
+
+            <tr>
+            <td style="text-align: left;">
+                <center>
+                <div class="list-box">
+                <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                    <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                    <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                        <h1 style="color:black;">O Fantasma da Ópera</h1><br>
+                        <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                    </div>
+                    <button><a href="books/fantasma.pdf" style="color: #ffffff; text-decoration: none:"><h2>Assistir</h2></a></button>
+                    </div>
+                </div>
+                </center>
+                <br><br>
+            </td>
+            </tr>
+
+            <tr>
+            <td style="text-align: left;">
+                <center>
+                <div class="list-box">
+                <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                    <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                    <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Duna</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/duna.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
                         </div>
-                    </div>
-                `;
-                
-                container.appendChild(bookCard);
-            });
-        }
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+            
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Torto Arado</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/torto_arado.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
 
-        // Função de pesquisa
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const filteredBooks = books.filter(book => 
-                book.title.toLowerCase().includes(searchTerm) || 
-                book.description.toLowerCase().includes(searchTerm)
-            );
-            renderBooks(filteredBooks);
-        });
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">A Metamorfose</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/metamorfose.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
 
-        // Renderiza todos os livros inicialmente
-        renderBooks(books);
-    </script>
-</body>
-</html>
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Harry Potter e a Pedra Filosofal</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/hp1.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Harry Potter e a Câmara Secreta</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/hp2.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Harry Potter e o Prisioneiro de Azkaban</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/hp3.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Harry Potter e o Cálice de Fogo</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/hp4.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Harry Potter e a Ordem da Fênix</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/hp5.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Harry Potter e o Enigma do Príncipe</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/hp6.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Harry Potter e as Relíquias da Morte</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/hp7.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">1984</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/1984.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Admirável Mundo Novo</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/admiravel-mundo-novo.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Água Viva</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/agua-viva.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">A Revolução dos Bichos</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/animal-farm.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Cleópatra e Frankestein</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/cleopatra-e-frankestein.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Correio Feminino</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/correio-feminino.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Cosmos</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/cosmos.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">A Guerra dos Mundos</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/guerra-dos-mundos.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">A Hora da Estrela</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/hora-da-estrela.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Invisível</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/invisivel.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">It</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/it.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Laços de Família</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/lacos-de-familia.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Memórias Póstumas de Brás Cubas</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/bras-cubas.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Labirinto do Fauno</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/labirinto-do-fauno.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Morro dos Ventos Uivantes</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/wuthering-heights.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Príncipe Cruel</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/principe-cruel.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Pessoas Normais</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/pessoas-normais.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Quarto de Despejo</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/quarto-de-despejo.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align: left;">
+                    <center>
+                        <div class="list-box">
+                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
+                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
+                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                    <h1 style="color:black;">Todas as Cartas</h1><br>
+                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
+                                </div>
+                            <button><a href="books/todas-as-cartas-clarice.pdf" style="color: #ffffff; text-decoration: none:"><h2>Download</h2></a></button>
+                            </div>
+                        </div>
+                    </center>
+                    <br><br>
+                </td>
+            </tr>
+
+
+        </table>
+
+    </body>
