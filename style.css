@@ -29,6 +29,19 @@ p{
     background-color: #427a6f;
 }
 
+.list-box {
+    background-color: #F2E1C8;
+    border-radius: 55px;
+    width: 70em;
+    display: flex;
+    height: 15em;
+    border-color: #E1A53E;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
 .center {
     justify-content: center;
     text-align: center;
