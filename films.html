@@ -135,14 +135,14 @@
                 const row = document.createElement('tr');
                 row.className = 'option';
                 
-                row.innerHTML = `
+               row.innerHTML = `
                     <td style="text-align: left;">
                         <center>
                             <div class="list-box">
                                 <div style="display: flex; gap: 3rem; padding: 1rem;">
                                     <img src="${movie.poster_path}" style="width: 10em; height: 10em; object-fit: cover;" alt="${movie.title}">
-                                    <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                        <h1 style="color:black;">${movie.title}</h1><br>
+                                    <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                                        <h1 style="color:black;  white-space: nowrap;">${movie.title}</h1><br>
                                         <p>${movie.overview}</p>
                                     </div>
                                     <div style="display: flex; flex-direction: column; align-items:flex-end;">
