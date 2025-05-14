@@ -29,8 +29,16 @@ p{
     background-color: #427a6f;
 }
 
+.button {
+  background-color: #6f4637;
+  border-radius: 25%;
+  margin-left: auto;
+  height: 5em;
+}
+
 .list-box {
     background-color: #F2E1C8;
+    /*background-image: linear-gradient(to right, #F2E1C8 97%, rgb(38, 24, 64) 3%);*/
     border-radius: 55px;
     width: 70em;
     display: flex;
