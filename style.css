@@ -36,6 +36,11 @@ p{
   height: 5em;
 }
 
+.button:hover {
+  transform: scale(1.02);
+  background-color: #427a6f;
+}
+
 .list-box {
     background-color: #F2E1C8;
     /*background-image: linear-gradient(to right, #F2E1C8 97%, rgb(38, 24, 64) 3%);*/
@@ -102,10 +107,12 @@ li {
     width: 40%;
   }
   input[type="search"] {
-    width: 40%;
+    width: 85%;
+    background-color: #e9d0bb;
     padding: 0.75rem 2.75rem 0.75rem 1rem;
-    border: 2px solid #ccc;
-    border-radius: 1.5rem;
+    border: 2px solid #7e5d43;
+    border-radius: 2rem;
+    color: #7e5d43;
     font-size: 1rem;
     transition: border-color 0.3s ease;
   }
