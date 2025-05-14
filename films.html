@@ -3,6 +3,13 @@
     <head>
         <title>Films</title>
         <link rel="stylesheet" href="style.css">
+        <style>
+            .loading {
+                color: white;
+                text-align: center;
+                padding: 20px;
+            }
+        </style>
     </head>
     <body id="index">
         <div style = "display:flex; align-items:center; gap:1rem; max-width: 600px; padding: 1rem;">
@@ -14,7 +21,6 @@
 
         <div class="center">
             <h1 style="font-size:3em;">F I L M E S</h1>
-            
         </div>
         <br><br>
 
@@ -37,843 +43,179 @@
         </form>
         </center>
 
+        <!-- Loading indicator -->
+        <div id="loading" class="loading">Carregando informações dos filmes...</div>
 
-        <!--inicio lista de filmes-->
-<div id="results">
-        <table style="width: 100%; padding-top: 2em;">
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                            <div style="display: flex; gap: 3rem; padding: 1rem;">
-                                <img src="img/claquete-icon.png" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">O Encouraçado Potemkin</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-            <td style="text-align: left;">
-                <center>
-                <div class="list-box">
-                    <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                        <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                        <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                            <h1 style="color:black;">Ran</h1><br>
-                            <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                        </div>
-                        <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                            <button class="button">
-                                <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                    <h2>Assistir</h2>
-                                </a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                </center>
-                <br><br>
-            </td>
-            </tr>
-
-            <tr class="option">
-            <td style="text-align: left;">
-                <center>
-                <div class="list-box">
-                <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                    <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                    <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                        <h1 style="color:black;">O Grande Hotel Budapeste</h1><br>
-                        <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                    </div>
-                    <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                        <button class="button">
-                            <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                <h2>Assistir</h2>
-                            </a>
-                        </button>
-                    </div>
-                </div>
-                </div>
-                </center>
-                <br><br>
-            </td>
-            </tr>
-
-            <tr class="option">
-            <td style="text-align: left;">
-                <center>
-                <div class="list-box">
-                <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                    <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                    <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Amadeus</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-            
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">O Rei do Show</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">A Substância</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">O Pianista</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Corra!</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">O Fabuloso Destino de Amelie Poulain</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">O Show de Truman</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Interestelar</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Central do Brasil</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">A Lista de Schindler</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Sorria</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">A Viagem de Chihiro</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Ilha de Cachorros</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">O Jogo da Imitação</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Matrix</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Ainda Estou Aqui</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Oppenheimer</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Karate Kid</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Karate Kid Parte Dois</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Karate Kid Parte Três</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">E.T.</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">De Volta para o Futuro (saga)</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Bohemian Rhapsody</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Top Gun</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Top Gun Maverick</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Estrelas Além do Tempo</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Adoráveis Mulheres</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Anatomia de uma Queda</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Longlegs</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Eu Sei Que Vou Te Amar</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-
-            <tr class="option">
-                <td style="text-align: left;">
-                    <center>
-                        <div class="list-box">
-                        <div style="display: flex; gap: 3rem; max-width: 600px; padding: 1rem; align-items: flex-start;">
-                            <img src="img/claquete-icon.png" alt="Clapperboard Icon" style="width: 10em; height: 10em;">
-                                <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
-                                    <h1 style="color:black;">Pobres Criaturas</h1><br>
-                                    <p>Ipsum Lorem dkhsvkidsndnvna</p>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items:flex-end;">
-                                    <button class="button">
-                                        <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
-                                            <h2>Assistir</h2>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
-                    <br><br>
-                </td>
-            </tr>
-</div>
+        <!-- Movie list will be populated by JavaScript -->
+        <div id="results">
+        <table style="width: 100%; padding-top: 2em;" id="moviesTable">
+            <!-- Movie rows will be inserted here by JavaScript -->
         </table>
-<script>
-    const searchInput = document.getElementById('searchInput');
-    const movieRows = document.querySelectorAll('.option');
-    function searchMovies() {
-        const filter = searchInput.value.toLowerCase();
-        movieRows.forEach(row => {
-            const title = row.querySelector('h1').textContent.toLowerCase();
-            if (title.includes(filter)) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
+        </div>
+
+        <script>
+            // TMDB API key
+            const API_KEY = 'ef7efd812164bec272114a656d3c6990';
+            
+            // Movie data with TMDB IDs or search queries
+            const movies = [
+                { title: "O Encouraçado Potemkin", query: "Battleship Potemkin", year: "1925", id: 848 },
+                { title: "Ran", query: "Ran", year: "1985", id: 11878 },
+                { title: "O Grande Hotel Budapeste", query: "The Grand Budapest Hotel", year: "2014", id: 120467 },
+                { title: "Amadeus", query: "Amadeus", year: "1984", id: 279 },
+                { title: "O Rei do Show", query: "The Greatest Showman", year: "2017", id: 316029 },
+                { title: "A Substância", query: "The Substance", year: "2024", id: 872906 },
+                { title: "O Pianista", query: "The Pianist", year: "2002", id: 423 },
+                { title: "Corra!", query: "Get Out", year: "2017", id: 419430 },
+                { title: "O Fabuloso Destino de Amelie Poulain", query: "Amélie", year: "2001", id: 194 },
+                { title: "O Show de Truman", query: "The Truman Show", year: "1998", id: 37165 },
+                { title: "Interestelar", query: "Interstellar", year: "2014", id: 157336 },
+                { title: "Central do Brasil", query: "Central Station", year: "1998", id: 10873 },
+                { title: "A Lista de Schindler", query: "Schindler's List", year: "1993", id: 424 },
+                { title: "Sorria", query: "Smile", year: "2022", id: 882598 },
+                { title: "A Viagem de Chihiro", query: "Spirited Away", year: "2001", id: 129 },
+                { title: "Ilha de Cachorros", query: "Isle of Dogs", year: "2018", id: 399174 },
+                { title: "O Jogo da Imitação", query: "The Imitation Game", year: "2014", id: 205596 },
+                { title: "Matrix", query: "The Matrix", year: "1999", id: 603 },
+                { title: "Ainda Estou Aqui", query: "Still Here", year: "2020", id: 726684 },
+                { title: "Oppenheimer", query: "Oppenheimer", year: "2023", id: 872585 },
+                { title: "Karate Kid", query: "The Karate Kid", year: "1984", id: 1374 },
+                { title: "Karate Kid Parte Dois", query: "The Karate Kid Part II", year: "1986", id: 1375 },
+                { title: "Karate Kid Parte Três", query: "The Karate Kid Part III", year: "1989", id: 1376 },
+                { title: "E.T.", query: "E.T. the Extra-Terrestrial", year: "1982", id: 601 },
+                { title: "De Volta para o Futuro (saga)", query: "Back to the Future", year: "1985", id: 105 },
+                { title: "Bohemian Rhapsody", query: "Bohemian Rhapsody", year: "2018", id: 424694 },
+                { title: "Top Gun", query: "Top Gun", year: "1986", id: 744 },
+                { title: "Top Gun Maverick", query: "Top Gun: Maverick", year: "2022", id: 361743 },
+                { title: "Estrelas Além do Tempo", query: "Hidden Figures", year: "2016", id: 381284 },
+                { title: "Adoráveis Mulheres", query: "Little Women", year: "2019", id: 331482 },
+                { title: "Anatomia de uma Queda", query: "Anatomy of a Fall", year: "2023", id: 930564 },
+                { title: "Longlegs", query: "Longlegs", year: "2024", id: 1098160 },
+                { title: "Eu Sei Que Vou Te Amar", query: "Eu Sei Que Vou Te Amar", year: "1986", id: 114180 },
+                { title: "Pobres Criaturas", query: "Poor Things", year: "2023", id: 792307 }
+            ];
+
+            // Function to fetch movie details from TMDB
+            async function fetchMovieDetails(movie) {
+                try {
+                    let url;
+                    if (movie.id) {
+                        url = `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}&language=pt-BR`;
+                    } else {
+                        // Fallback to search if no ID is provided
+                        const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=pt-BR&query=${encodeURIComponent(movie.query)}&year=${movie.year}`;
+                        const searchResponse = await fetch(searchUrl);
+                        const searchData = await searchResponse.json();
+                        
+                        if (searchData.results && searchData.results.length > 0) {
+                            // Get the first result (most likely match)
+                            movie.id = searchData.results[0].id;
+                            url = `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}&language=pt-BR`;
+                        } else {
+                            return { ...movie, overview: "Sinopse não disponível" };
+                        }
+                    }
+                    
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    
+                    return {
+                        ...movie,
+                        overview: data.overview || "Sinopse não disponível",
+                        poster_path: data.poster_path ? `https://image.tmdb.org/t/p/w200${data.poster_path}` : 'img/claquete-icon.png'
+                    };
+                } catch (error) {
+                    console.error(`Error fetching details for ${movie.title}:`, error);
+                    return { ...movie, overview: "Erro ao carregar sinopse", poster_path: 'img/claquete-icon.png' };
+                }
             }
-        });
-    }
-    // Busca em tempo real ao digitar
-    searchInput.addEventListener('input', searchMovies);
-</script>
+
+            // Function to create a movie row
+            function createMovieRow(movie) {
+                const row = document.createElement('tr');
+                row.className = 'option';
                 
+                row.innerHTML = `
+                    <td style="text-align: left;">
+                        <center>
+                            <div class="list-box">
+                                <div style="display: flex; gap: 3rem; padding: 1rem;">
+                                    <img src="${movie.poster_path}" style="width: 10em; height: 10em; object-fit: cover;" alt="${movie.title}">
+                                    <div style="display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap;">
+                                        <h1 style="color:black;">${movie.title}</h1><br>
+                                        <p>${movie.overview}</p>
+                                    </div>
+                                    <div style="display: flex; flex-direction: column; align-items:flex-end;">
+                                        <button class="button">
+                                            <a href="https://drive.google.com/file/d/1t7BvWykyfHMhusr6Ocm--14utCaO9dNy/view?usp=sharing" style="color: #ffffff; text-decoration: none;" target="_blank">
+                                                <h2>Assistir</h2>
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </center>
+                        <br><br>
+                    </td>
+                `;
+                
+                return row;
+            }
+
+            // Main function to load all movies
+            async function loadMovies() {
+                const moviesTable = document.getElementById('moviesTable');
+                const loadingElement = document.getElementById('loading');
+                
+                try {
+                    // Fetch details for all movies
+                    const movieDetails = await Promise.all(movies.map(movie => fetchMovieDetails(movie)));
+                    
+                    // Create and append rows for each movie
+                    movieDetails.forEach(movie => {
+                        moviesTable.appendChild(createMovieRow(movie));
+                    });
+                    
+                    // Hide loading indicator
+                    loadingElement.style.display = 'none';
+                    
+                    // Initialize search functionality
+                    initSearch();
+                } catch (error) {
+                    console.error('Error loading movies:', error);
+                    loadingElement.textContent = 'Erro ao carregar filmes. Por favor, recarregue a página.';
+                }
+            }
+
+            // Initialize search functionality
+            function initSearch() {
+                const searchInput = document.getElementById('searchInput');
+                const movieRows = document.querySelectorAll('.option');
+                
+                function searchMovies() {
+                    const filter = searchInput.value.toLowerCase();
+                    movieRows.forEach(row => {
+                        const title = row.querySelector('h1').textContent.toLowerCase();
+                        if (title.includes(filter)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                }
+                
+                // Search as you type
+                searchInput.addEventListener('input', searchMovies);
+                
+                // Prevent form submission
+                document.getElementById('searchForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    searchMovies();
+                });
+            }
+
+            // Load movies when page is ready
+            document.addEventListener('DOMContentLoaded', loadMovies);
+        </script>
     </body>
+</html>
